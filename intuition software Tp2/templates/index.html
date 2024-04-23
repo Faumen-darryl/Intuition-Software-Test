@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue, {{ username }}</h1>
+        <h2>Service de notification de crypto-monnaie</h2>
+        <p>Quel service désirez-vous ?</p>
+        <div class="buttons">
+            <a href="{{ url_for('create_alert_usd') }}" class="button">Créer des alertes (USD)</a>
+            <a href="{{ url_for('alert_eur') }}" class="button">Créer des alertes (EUR)</a>
+            <a href="{{ url_for('all_alerts') }}" class="button">Afficher toutes les alertes</a>
+            <a href="{{ url_for('modify_alerts') }}" class="button">Modifier les alertes</a>
+            <a href="{{ url_for('delete_alerts') }}" class="button">Supprimer des alertes</a>
+            <a href="{{ url_for('logout') }}">Déconnexion</a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer une alerte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Supprimer une alerte</h1>
+        <form action="{{ url_for('delete_alerts') }}" method="POST">
+            <select name="alert_id" required>
+                {% for alert in alerts %}
+                <option value="{{ alert._id }}">{{ alert.message }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Supprimer l'alerte</button>
+        </form>
+    </div>
+</body>
+</html>

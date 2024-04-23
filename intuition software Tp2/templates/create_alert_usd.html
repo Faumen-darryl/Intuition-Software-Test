@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer une alerte en USD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Créer une alerte en USD</h1>
+        <form action="{{ url_for('create_alert_usd') }}" method="POST">
+            <label for="threshold">Valeur pour l'alerte (USD):</label>
+            <input type="number" name="threshold" id="threshold" placeholder="Entrez la valeur" required>
+            <button type="submit">Créer l'alerte</button>
+        </form>
+        <h2>Alertes générées</h2>
+        <ul>
+            {% for alert in alerts %}
+            <li>{{ alert }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
